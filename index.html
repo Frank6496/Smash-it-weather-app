@@ -1,10 +1,77 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Hello Practice</title>
-	<link rel="stylesheet" type="text/css" href="styles.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>smashIt WeatherApp</title>
+    <meta name="description" content="This is smash site">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="manifest.json">
+    <!--<script src="manifest.json"></script>-->
+    <link rel="stylesheet" href="styles.css">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+        integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous" />
+    <!--Import Google Icon Font-->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital@0;1&family=Merriweather:ital,wght@0,400;0,700;1,700&display=swap"
+        rel="stylesheet">
+
 </head>
 <body>
-   <h1>Hello Practice</h1>
+    <header class="header">
+        <div class="container" style="z-index: -2;">
+            <form action="" id="search" class="form-tag">
+                <div class="form-group">
+                    <label for="City"><input type="text" placeholder="City Country" id="city" autofocus></label>
+                </div>
+                <button aria-label="search city" type="submit"><i class="fa fa-search fa-3x"aria-hidden="true"></i></button>
+            </form>
+            <div class="row">
+                <div class="city">
+                    <h3 id="city-box" class="city-box">City</h3>
+                    <div class="time-deg">
+                        <div class="time">
+                            <div class="time-boxes">
+                                <div class="time-box" id="hour">00</div>
+                                <div class="time-box" id="minute">00</div>
+                                <div class="time-box" id="second">00</div>
+                                <span class="ap" id="ap">00</span>
+                            </div>
+                            <p id="date"></p>
+                        </div>
+                        <div class="deg" id="deg">00 <sup>0</sup>C</div>
+                    </div>
+                </div>
+                <div class="condition">
+                    <div class="icon"><img src="" alt="" id="icon"></div>
+                    <h2 id="city-condition"></h2>
+                    <div class="table" id="table"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="alert" id="alert">
+        <p id="alert-p">successfully added</p>
+    </div>
+    <!--
+    <script>
+        if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function () {
+                    navigator.serviceWorker.register('/service-worker.js');
+                });
+            }
+    </script>
+-->
+    <script src="app.js" ></script>
 </body>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/7.20.0/firebase-app.js"></script>
+    
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="/__/firebase/7.20.0/firebase-analytics.js"></script>
+    
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
 </html>
